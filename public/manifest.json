@@ -1,0 +1,16 @@
+{
+  "name": "LUMI - AI Fashion Companion",
+  "short_name": "LUMI",
+  "description": "Meet LUMI, the AI cat who helps you look more stylish with the clothes you already own.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fffaf6",
+  "theme_color": "#2b2623",
+  "icons": [
+    {
+      "src": "/assets/lumi1.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-cream-50: #fffcfa;
+    --color-cream-100: #fffaf6;
+    --color-cream-300: #efe6dd;
+    --color-cream-500: #d7cabd;
+    --color-charcoal-500: #6b625d;
+    --color-charcoal-900: #2b2623;
+    --color-terracotta-500: #a86e61;
+  }
+
+  * {
+    @apply border-charcoal-200;
+  }
+
+  body {
+    @apply bg-cream-100 text-charcoal-900 antialiased;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+}
+
+@layer components {
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .container-custom {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-terracotta-500 to-charcoal-900 bg-clip-text text-transparent;
+  }
+
+  .card-premium {
+    @apply rounded-2xl border border-cream-400 bg-cream-50 p-8 shadow-sm transition-all duration-300 hover:shadow-md;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-charcoal-900 px-8 py-4 text-body font-medium text-cream-50 transition-all duration-300 hover:bg-charcoal-800 hover:shadow-lg active:scale-95;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border-2 border-charcoal-900 bg-transparent px-8 py-4 text-body font-medium text-charcoal-900 transition-all duration-300 hover:bg-charcoal-900 hover:text-cream-50 active:scale-95;
+  }
+
+  .btn-tertiary {
+    @apply inline-flex items-center justify-center px-6 py-3 text-body font-medium text-charcoal-900 transition-all duration-300 hover:text-terracotta-500;
+  }
+}
