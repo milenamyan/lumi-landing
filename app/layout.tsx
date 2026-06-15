@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { ScrollToTop } from '@/components/ScrollToTop'
 import './globals.css'
 
 const inter = Inter({
@@ -49,7 +50,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={inter.variable}>
-      <body className="font-sans">{children}</body>
+      <body className="font-sans">
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){if('scrollRestoration'in history)history.scrollRestoration='manual';window.scrollTo(0,0);})();`,
+          }}
+        />
+        <ScrollToTop />
+        {children}
+      </body>
     </html>
   )
 }

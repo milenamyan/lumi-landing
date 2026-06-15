@@ -52,29 +52,29 @@ export function NotPayToWin() {
 
       <div className="rounded-3xl bg-gradient-to-br from-terracotta-500/10 to-charcoal-900/5 p-6 md:p-8">
         <h3 className="text-h2 mb-6 text-center">Fairness Formula</h3>
-        <div className="flex flex-wrap items-center justify-center gap-4 text-center max-w-4xl mx-auto">
-          <div className="flex-1 min-w-[200px]">
+        <div className="flex flex-col items-stretch gap-2 text-center max-w-4xl mx-auto md:flex-row md:flex-wrap md:items-center md:justify-center md:gap-4">
+          <div className="w-full md:flex-1 md:min-w-[200px]">
             <div className="rounded-2xl bg-cream-50 p-6">
               <p className="text-h3 mb-2">Your Style</p>
               <p className="text-body-sm text-charcoal-500">Real outfit quality</p>
             </div>
           </div>
-          <div className="text-h2 text-charcoal-500">+</div>
-          <div className="flex-1 min-w-[200px]">
+          <div className="flex w-full items-center justify-center py-1 text-h2 text-charcoal-500 md:w-auto md:py-0">+</div>
+          <div className="w-full md:flex-1 md:min-w-[200px]">
             <div className="rounded-2xl bg-cream-50 p-6">
               <p className="text-h3 mb-2">User Votes</p>
               <p className="text-body-sm text-charcoal-500">Community decision</p>
             </div>
           </div>
-          <div className="text-h2 text-charcoal-500">+</div>
-          <div className="flex-1 min-w-[200px]">
+          <div className="flex w-full items-center justify-center py-1 text-h2 text-charcoal-500 md:w-auto md:py-0">+</div>
+          <div className="w-full md:flex-1 md:min-w-[200px]">
             <div className="rounded-2xl bg-cream-50 p-6">
               <p className="text-h3 mb-2">AI Analysis</p>
               <p className="text-body-sm text-charcoal-500">Objective feedback</p>
             </div>
           </div>
-          <div className="text-h2 text-charcoal-500">=</div>
-          <div className="flex-1 min-w-[200px]">
+          <div className="flex w-full items-center justify-center py-1 text-h2 text-charcoal-500 md:w-auto md:py-0">=</div>
+          <div className="w-full md:flex-1 md:min-w-[200px]">
             <div className="rounded-2xl bg-terracotta-500 p-6">
               <p className="text-h3 mb-2 text-cream-50">Fair Result</p>
               <p className="text-body-sm text-cream-50">Merit-based outcome</p>

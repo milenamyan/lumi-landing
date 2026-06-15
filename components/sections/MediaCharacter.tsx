@@ -4,6 +4,9 @@ import { Section, SectionHeader } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
 
+const instagramUrl = 'https://www.instagram.com/itslumicat?igsh=MTRid243ZWJ2ZWIwdQ=='
+const tiktokUrl = 'https://www.tiktok.com/@itslumi.cat?_r=1&_t=ZS-97ENKXEzIxd'
+
 export function MediaCharacter() {
   const contentTypes = [
     {
@@ -60,10 +63,18 @@ export function MediaCharacter() {
             Get style tips, laugh at relatable moments, and be first to know about SIMPLARA updates.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button variant="primary" size="lg">
+            <Button
+              variant="primary"
+              size="lg"
+              onClick={() => window.open(instagramUrl, '_blank', 'noopener,noreferrer')}
+            >
               Instagram
             </Button>
-            <Button variant="secondary" size="lg">
+            <Button
+              variant="secondary"
+              size="lg"
+              onClick={() => window.open(tiktokUrl, '_blank', 'noopener,noreferrer')}
+            >
               TikTok
             </Button>
           </div>
