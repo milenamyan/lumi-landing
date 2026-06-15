@@ -1,16 +1,35 @@
 'use client'
 
+import Image from 'next/image'
+
+const simplaraUrl = 'https://simplara-landing.vercel.app/ru'
+
 export function Footer() {
   return (
-    <footer className="bg-charcoal-900 text-cream-100 py-12">
+    <footer className="bg-charcoal-900 text-cream-100 py-8">
       <div className="container-custom">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 mb-8">
           {/* Brand */}
           <div>
             <h3 className="text-h3 mb-4">LUMI</h3>
-            <p className="text-body-sm text-cream-300">
+            <p className="text-body-sm text-cream-300 mb-4">
               Your AI fashion companion inside SIMPLARA
             </p>
+            <a
+              href={simplaraUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 hover:opacity-80 transition-opacity"
+              aria-label="Visit SIMPLARA"
+            >
+              <Image
+                src="/assets/simplara-logo.png"
+                alt="SIMPLARA"
+                width={40}
+                height={40}
+                className="h-10 w-10 object-contain"
+              />
+            </a>
           </div>
 
           {/* Quick Links */}
@@ -81,7 +100,7 @@ export function Footer() {
         </div>
 
         {/* Bottom */}
-        <div className="pt-8 border-t border-charcoal-700 flex flex-col md:flex-row justify-between items-center gap-4 text-body-sm text-cream-300">
+        <div className="pt-6 border-t border-charcoal-700 flex flex-col md:flex-row justify-between items-center gap-4 text-body-sm text-cream-300">
           <p>© {new Date().getFullYear()} SIMPLARA. All rights reserved.</p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-terracotta-500 transition-colors">

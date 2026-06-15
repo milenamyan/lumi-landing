@@ -36,7 +36,7 @@ export function NotPayToWin() {
         centered
       />
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-16">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-10">
         {fairnessPoints.map((point, index) => (
           <Card 
             key={point.title}
@@ -50,7 +50,7 @@ export function NotPayToWin() {
         ))}
       </div>
 
-      <div className="rounded-3xl bg-gradient-to-br from-terracotta-500/10 to-charcoal-900/5 p-8 md:p-12">
+      <div className="rounded-3xl bg-gradient-to-br from-terracotta-500/10 to-charcoal-900/5 p-6 md:p-8">
         <h3 className="text-h2 mb-6 text-center">Fairness Formula</h3>
         <div className="flex flex-wrap items-center justify-center gap-4 text-center max-w-4xl mx-auto">
           <div className="flex-1 min-w-[200px]">
@@ -83,7 +83,7 @@ export function NotPayToWin() {
         </div>
       </div>
 
-      <div className="mt-12 text-center max-w-3xl mx-auto">
+      <div className="mt-8 text-center max-w-3xl mx-auto">
         <p className="text-body-lg text-charcoal-500">
           LUMI&apos;s role is to help you present your best self and understand what makes an outfit 
           strong. Success comes from your fashion sense and creativity, not from purchases or upgrades.

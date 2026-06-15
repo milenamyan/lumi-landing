@@ -3,20 +3,37 @@
 import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 
+const simplaraUrl = 'https://simplara-landing.vercel.app/ru'
+
 export function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-b from-cream-50 to-cream-100">
-      <div className="container-custom py-20 md:py-32">
-        <div className="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
+    <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-b from-cream-50 to-cream-100 pt-24 pb-12 md:pt-28 md:pb-16">
+      <div className="container-custom">
+        <div className="grid gap-8 lg:grid-cols-2 lg:gap-10 items-center">
           {/* Left Column - Content */}
           <div className="animate-fade-in">
-            <h1 className="mb-6 text-display-2 md:text-display-1 text-balance">
+            <h1 className="mb-4 text-display-2 md:text-display-1 text-balance">
               This is <span className="gradient-text">LUMI</span> — the AI cat who helps you look more stylish
             </h1>
-            <p className="mb-8 text-body-lg text-charcoal-500 max-w-2xl">
-              He lives inside SIMPLARA, builds outfits from your wardrobe, helps evaluate style, 
-              and supports you in fashion battles. LUMI is not just a mascot — he&apos;s your personal 
-              fashion companion.
+            <p className="mb-6 text-body-lg text-charcoal-500 max-w-2xl">
+              He lives inside{' '}
+              <a
+                href={simplaraUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center align-middle mx-1 hover:opacity-80 transition-opacity"
+                aria-label="Visit SIMPLARA"
+              >
+                <Image
+                  src="/assets/simplara-logo.png"
+                  alt="SIMPLARA"
+                  width={28}
+                  height={28}
+                  className="h-7 w-7 object-contain inline-block"
+                />
+              </a>
+              , builds outfits from your wardrobe, helps evaluate style, and supports you in fashion
+              battles. LUMI is not just a mascot — he&apos;s your personal fashion companion.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}>
@@ -28,7 +45,7 @@ export function Hero() {
             </div>
             
             {/* Trust Indicators */}
-            <div className="mt-12 flex flex-wrap gap-8 text-body-sm text-charcoal-500">
+            <div className="mt-8 flex flex-wrap gap-6 text-body-sm text-charcoal-500">
               <div>
                 <p className="font-semibold text-charcoal-900">AI-Powered</p>
                 <p>Style Assistant</p>
@@ -71,7 +88,7 @@ export function Hero() {
       </div>
 
       {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce">
         <div className="w-6 h-10 border-2 border-charcoal-900/30 rounded-full flex items-start justify-center p-2">
           <div className="w-1.5 h-1.5 bg-charcoal-900/30 rounded-full"></div>
         </div>

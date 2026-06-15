@@ -49,7 +49,7 @@ export function OutfitSelection() {
         centered
       />
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-16">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-10">
         {occasions.map((occasion, index) => (
           <Card 
             key={occasion.title}
@@ -70,8 +70,8 @@ export function OutfitSelection() {
         ))}
       </div>
 
-      <div className="rounded-3xl bg-gradient-to-br from-cream-100 to-cream-200 p-8 md:p-12">
-        <h3 className="text-h2 mb-8 text-center">How LUMI Helps You</h3>
+      <div className="rounded-3xl bg-gradient-to-br from-cream-100 to-cream-200 p-6 md:p-8">
+        <h3 className="text-h2 mb-6 text-center">How LUMI Helps You</h3>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
           {features.map((feature, index) => (
             <div 

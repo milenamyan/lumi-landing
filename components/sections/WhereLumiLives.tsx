@@ -45,7 +45,7 @@ export function WhereLumiLives() {
         <div className="hidden md:block absolute top-1/2 left-0 right-0 h-1 bg-gradient-to-r from-cream-300 via-terracotta-500/30 to-charcoal-900/30 -translate-y-1/2"></div>
 
         {/* Stages */}
-        <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4 relative z-10">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 relative z-10">
           {stages.map((item, index) => (
             <Card 
               key={item.stage}
@@ -63,7 +63,7 @@ export function WhereLumiLives() {
         </div>
       </div>
 
-      <div className="mt-16 text-center max-w-3xl mx-auto">
+      <div className="mt-10 text-center max-w-3xl mx-auto">
         <p className="text-body-lg text-charcoal-500">
           LUMI&apos;s space is a living representation of your fashion journey. Every action you take 
           in SIMPLARA contributes to building his world — making it richer, more personalized, 

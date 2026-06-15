@@ -25,7 +25,7 @@ export function WhyLumiExists() {
 
   return (
     <Section id="why-lumi" className="bg-cream-100">
-      <div className="grid gap-12 lg:grid-cols-2 items-center mb-16">
+      <div className="grid gap-8 lg:grid-cols-2 items-center mb-10">
         <div>
           <SectionHeader
             subtitle="The Everyday Value"
@@ -33,7 +33,7 @@ export function WhyLumiExists() {
             description="LUMI makes outfit selection simpler, warmer, and more habitual."
           />
         </div>
-        <div className="rounded-3xl bg-cream-200 p-12 text-center">
+        <div className="rounded-3xl bg-cream-200 p-8 text-center">
           <p className="text-display-3 mb-4">🌅</p>
           <h3 className="text-h3 mb-3">Morning Scenario</h3>
           <p className="text-body text-charcoal-500">

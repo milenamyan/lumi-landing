@@ -16,6 +16,13 @@ export function Navigation() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [isMobileMenuOpen])
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId)
     if (element) {
@@ -23,6 +30,8 @@ export function Navigation() {
       setIsMobileMenuOpen(false)
     }
   }
+
+  const simplaraUrl = 'https://simplara-landing.vercel.app/ru'
 
   const navLinks = [
     { label: 'About LUMI', href: 'who-is-lumi' },
@@ -32,15 +41,18 @@ export function Navigation() {
   ]
 
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
-          ? 'bg-cream-50/95 backdrop-blur-md shadow-md'
-          : 'bg-transparent'
-      }`}
-    >
-      <div className="container-custom">
-        <div className="flex items-center justify-between py-4">
+    <>
+      <nav
+        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
+          isMobileMenuOpen ? 'bottom-0 overflow-y-auto md:bottom-auto md:overflow-visible' : ''
+        } ${
+          isScrolled || isMobileMenuOpen
+            ? 'bg-cream-50 shadow-md md:bg-cream-50/95 md:backdrop-blur-md'
+            : 'bg-transparent'
+        }`}
+      >
+        <div className="container-custom">
+          <div className="flex items-center justify-between py-4">
           {/* Logo */}
           <button
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
@@ -68,6 +80,21 @@ export function Navigation() {
                 {link.label}
               </button>
             ))}
+            <a
+              href={simplaraUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center hover:opacity-80 transition-opacity"
+              aria-label="Visit SIMPLARA"
+            >
+              <Image
+                src="/assets/simplara-logo.png"
+                alt="SIMPLARA"
+                width={36}
+                height={36}
+                className="h-9 w-9 object-contain"
+              />
+            </a>
             <Button
               variant="primary"
               size="sm"
@@ -97,8 +124,8 @@ export function Navigation() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden pb-4 animate-fade-in">
-            <div className="flex flex-col gap-4">
+          <div className="md:hidden pb-8 animate-fade-in">
+            <div className="flex flex-col gap-4 border-t border-cream-300 pt-6">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
@@ -108,6 +135,21 @@ export function Navigation() {
                   {link.label}
                 </button>
               ))}
+              <a
+                href={simplaraUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-2 text-body font-medium text-charcoal-900 hover:text-terracotta-500 transition-colors"
+              >
+                <Image
+                  src="/assets/simplara-logo.png"
+                  alt="SIMPLARA"
+                  width={28}
+                  height={28}
+                  className="h-7 w-7 object-contain"
+                />
+                Visit SIMPLARA
+              </a>
               <Button
                 variant="primary"
                 size="md"
@@ -119,7 +161,8 @@ export function Navigation() {
             </div>
           </div>
         )}
-      </div>
-    </nav>
+        </div>
+      </nav>
+    </>
   )
 }

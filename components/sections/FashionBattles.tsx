@@ -34,7 +34,7 @@ export function FashionBattles() {
         centered
       />
 
-      <div className="grid gap-8 md:grid-cols-3 mb-16">
+      <div className="grid gap-6 md:grid-cols-3 mb-10">
         {battlePhases.map((phase, index) => (
           <Card 
             key={phase.phase}
@@ -51,8 +51,8 @@ export function FashionBattles() {
         ))}
       </div>
 
-      <div className="rounded-3xl bg-gradient-to-br from-charcoal-900/5 to-cream-100 p-8 md:p-12">
-        <h3 className="text-h2 mb-8 text-center">Battle Result Layers</h3>
+      <div className="rounded-3xl bg-gradient-to-br from-charcoal-900/5 to-cream-100 p-6 md:p-8">
+        <h3 className="text-h2 mb-6 text-center">Battle Result Layers</h3>
         <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
           <div className="text-center">
             <div className="w-16 h-16 rounded-full bg-terracotta-500 flex items-center justify-center text-cream-50 text-h3 mx-auto mb-4">
@@ -84,7 +84,7 @@ export function FashionBattles() {
         </div>
       </div>
 
-      <div className="mt-12 max-w-3xl mx-auto space-y-4">
+      <div className="mt-8 max-w-3xl mx-auto space-y-4">
         <Card className="bg-gradient-to-br from-terracotta-500/10 to-cream-50">
           <h4 className="text-h4 mb-2">For Winners</h4>
           <p className="text-body text-charcoal-500">

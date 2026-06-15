@@ -55,7 +55,7 @@ export function Waitlist() {
       />
 
       <div className="max-w-2xl mx-auto">
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label htmlFor="name" className="block text-body font-medium text-charcoal-900 mb-2">
               Name *

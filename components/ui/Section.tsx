@@ -35,7 +35,7 @@ export function SectionHeader({
   const maxWidth = centered ? 'max-w-3xl' : 'max-w-4xl'
 
   return (
-    <div className={`mb-12 md:mb-16 ${alignment} ${maxWidth} ${className}`}>
+    <div className={`mb-8 md:mb-10 ${alignment} ${maxWidth} ${className}`}>
       {subtitle && (
         <p className="mb-3 text-body-sm font-semibold uppercase tracking-wider text-terracotta-500">
           {subtitle}

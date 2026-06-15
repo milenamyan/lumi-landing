@@ -37,7 +37,7 @@ export function MediaCharacter() {
         centered
       />
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-12">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-8">
         {contentTypes.map((content, index) => (
           <Card 
             key={content.type}
@@ -51,7 +51,7 @@ export function MediaCharacter() {
         ))}
       </div>
 
-      <div className="rounded-3xl bg-gradient-to-br from-terracotta-500/10 to-charcoal-900/5 p-8 md:p-12 text-center">
+      <div className="rounded-3xl bg-gradient-to-br from-terracotta-500/10 to-charcoal-900/5 p-6 md:p-8 text-center">
         <div className="max-w-2xl mx-auto">
           <div className="text-6xl mb-6">📱</div>
           <h3 className="text-h2 mb-4">Follow @itslumicat</h3>
@@ -70,7 +70,7 @@ export function MediaCharacter() {
         </div>
       </div>
 
-      <div className="mt-12 grid gap-6 md:grid-cols-3">
+      <div className="mt-8 grid gap-6 md:grid-cols-3">
         <Card className="text-center">
           <p className="text-display-3 font-bold text-terracotta-500 mb-2">50K+</p>
           <p className="text-body text-charcoal-500">Followers</p>

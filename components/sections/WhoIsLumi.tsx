@@ -34,7 +34,7 @@ export function WhoIsLumi() {
         ))}
       </div>
 
-      <div className="mt-16 rounded-3xl bg-gradient-to-br from-terracotta-500/10 to-charcoal-900/5 p-8 md:p-12">
+      <div className="mt-10 rounded-3xl bg-gradient-to-br from-terracotta-500/10 to-charcoal-900/5 p-6 md:p-8">
         <div className="max-w-3xl mx-auto text-center">
           <h3 className="text-h2 mb-4">An Emotional AI Interface</h3>
           <p className="text-body-lg text-charcoal-500">

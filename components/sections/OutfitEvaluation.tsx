@@ -46,7 +46,7 @@ export function OutfitEvaluation() {
         centered
       />
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-16">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-10">
         {criteria.map((item, index) => (
           <Card 
             key={item.title}
@@ -107,7 +107,7 @@ export function OutfitEvaluation() {
         </Card>
       </div>
 
-      <div className="mt-12 text-center max-w-3xl mx-auto">
+      <div className="mt-8 text-center max-w-3xl mx-auto">
         <p className="text-h4 text-charcoal-900 mb-4">
           &quot;LUMI does not set beauty standards. LUMI helps reveal your style.&quot;
         </p>

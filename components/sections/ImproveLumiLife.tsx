@@ -52,7 +52,7 @@ export function ImproveLumiLife() {
         centered
       />
 
-      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-12">
+      <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 mb-8">
         {actions.map((item, index) => (
           <Card 
             key={item.action}
@@ -71,8 +71,8 @@ export function ImproveLumiLife() {
         ))}
       </div>
 
-      <div className="rounded-3xl bg-gradient-to-br from-terracotta-500/10 to-charcoal-900/5 p-8 md:p-12">
-        <div className="grid gap-8 md:grid-cols-3 text-center">
+      <div className="rounded-3xl bg-gradient-to-br from-terracotta-500/10 to-charcoal-900/5 p-6 md:p-8">
+        <div className="grid gap-6 md:grid-cols-3 text-center">
           <div>
             <div className="text-display-3 font-bold text-charcoal-900 mb-2">💰</div>
             <h4 className="text-h4 mb-2">Earn Lumens</h4>

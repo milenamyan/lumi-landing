@@ -46,7 +46,7 @@
 
 @layer components {
   .section-padding {
-    @apply py-16 md:py-24 lg:py-32;
+    @apply py-10 md:py-14 lg:py-18;
   }
 
   .container-custom {
@@ -58,7 +58,7 @@
   }
 
   .card-premium {
-    @apply rounded-2xl border border-cream-400 bg-cream-50 p-8 shadow-sm transition-all duration-300 hover:shadow-md;
+    @apply rounded-2xl border border-cream-400 bg-cream-50 p-6 shadow-sm transition-all duration-300 hover:shadow-md;
   }
 
   .btn-primary {
