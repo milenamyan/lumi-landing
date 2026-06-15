@@ -1,19 +1,18 @@
 'use client'
 
-import { ReactNode } from 'react'
+import { HTMLAttributes, ReactNode } from 'react'
 
-interface CardProps {
-  children: ReactNode
-  className?: string
+interface CardProps extends HTMLAttributes<HTMLDivElement> {
   hover?: boolean
 }
 
-export function Card({ children, className = '', hover = true }: CardProps) {
+export function Card({ children, className = '', hover = true, ...props }: CardProps) {
   return (
     <div 
       className={`rounded-2xl border border-cream-400 bg-cream-50 p-6 shadow-sm transition-all duration-300 ${
         hover ? 'hover:shadow-md hover:border-cream-500' : ''
       } ${className}`}
+      {...props}
     >
       {children}
     </div>
