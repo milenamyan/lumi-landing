@@ -1,12 +1,13 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const navRef = useRef<HTMLElement>(null)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,10 +18,16 @@ export function Navigation() {
   }, [])
 
   useEffect(() => {
-    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : ''
-    return () => {
-      document.body.style.overflow = ''
+    if (!isMobileMenuOpen) return
+
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setIsMobileMenuOpen(false)
+      }
     }
+
+    document.addEventListener('mousedown', handleClickOutside)
+    return () => document.removeEventListener('mousedown', handleClickOutside)
   }, [isMobileMenuOpen])
 
   const scrollToSection = (sectionId: string) => {
@@ -41,91 +48,95 @@ export function Navigation() {
   ]
 
   return (
-    <>
-      <nav
-        className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 ${
-          isMobileMenuOpen ? 'bottom-0 overflow-y-auto md:bottom-auto md:overflow-visible' : ''
-        } ${
-          isScrolled || isMobileMenuOpen
-            ? 'bg-cream-50 shadow-md md:bg-cream-50/95 md:backdrop-blur-md'
-            : 'bg-transparent'
+    <nav ref={navRef} className="fixed top-0 left-0 right-0 z-[100] overflow-visible">
+      <div
+        className={`transition-all duration-300 ${
+          isMobileMenuOpen
+            ? 'bg-cream-50'
+            : isScrolled
+              ? 'bg-cream-50/95 shadow-md backdrop-blur-md'
+              : ''
         }`}
       >
         <div className="container-custom">
           <div className="flex items-center justify-between py-4">
-          {/* Logo */}
-          <button
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="flex items-center gap-2.5 text-h3 font-bold text-charcoal-900 hover:text-terracotta-500 transition-colors"
-          >
-            <Image
-              src="/assets/lumi1.png"
-              alt="LUMI"
-              width={36}
-              height={36}
-              className="h-9 w-9 object-contain"
-              priority
-            />
-            LUMI
-          </button>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <button
-                key={link.href}
-                onClick={() => scrollToSection(link.href)}
-                className="text-body font-medium text-charcoal-900 hover:text-terracotta-500 transition-colors"
-              >
-                {link.label}
-              </button>
-            ))}
-            <a
-              href={simplaraUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center hover:opacity-80 transition-opacity"
-              aria-label="Visit SIMPLARA"
+            {/* Logo */}
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              className="flex items-center gap-2.5 text-h3 font-bold text-charcoal-900 hover:text-terracotta-500 transition-colors"
             >
               <Image
-                src="/assets/simplara-logo.png"
-                alt="SIMPLARA"
+                src="/assets/lumi1.png"
+                alt="LUMI"
                 width={36}
                 height={36}
                 className="h-9 w-9 object-contain"
+                priority
               />
-            </a>
-            <Button
-              variant="primary"
-              size="sm"
-              onClick={() => scrollToSection('waitlist')}
+              LUMI
+            </button>
+
+            {/* Desktop Navigation */}
+            <div className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <button
+                  key={link.href}
+                  onClick={() => scrollToSection(link.href)}
+                  className="text-body font-medium text-charcoal-900 hover:text-terracotta-500 transition-colors"
+                >
+                  {link.label}
+                </button>
+              ))}
+              <a
+                href={simplaraUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center hover:opacity-80 transition-opacity"
+                aria-label="Visit SIMPLARA"
+              >
+                <Image
+                  src="/assets/simplara-logo.png"
+                  alt="SIMPLARA"
+                  width={36}
+                  height={36}
+                  className="h-9 w-9 object-contain"
+                />
+              </a>
+              <Button
+                variant="primary"
+                size="sm"
+                onClick={() => scrollToSection('waitlist')}
+              >
+                Join Waitlist
+              </Button>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              className="md:hidden p-2 text-charcoal-900"
+              aria-label="Toggle menu"
+              aria-expanded={isMobileMenuOpen}
             >
-              Join Waitlist
-            </Button>
+              {isMobileMenuOpen ? (
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
           </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 text-charcoal-900"
-            aria-label="Toggle menu"
-          >
-            {isMobileMenuOpen ? (
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-              </svg>
-            ) : (
-              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
-            )}
-          </button>
         </div>
+      </div>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="md:hidden pb-8 animate-fade-in">
-            <div className="flex flex-col gap-4 border-t border-cream-300 pt-6">
+      {/* Mobile Menu Dropdown */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden px-4 pb-4">
+          <div className="rounded-2xl border border-cream-300 bg-cream-50 p-4 shadow-lg animate-fade-in">
+            <div className="flex flex-col gap-4">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
@@ -160,9 +171,8 @@ export function Navigation() {
               </Button>
             </div>
           </div>
-        )}
         </div>
-      </nav>
-    </>
+      )}
+    </nav>
   )
 }
