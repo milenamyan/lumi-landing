@@ -2,21 +2,24 @@
 
 import { Section, SectionHeader } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export function WhoIsLumi() {
+  const { t } = useLanguage()
+
   const emotions = [
-    { state: 'Joy', description: 'When you create a great outfit', emoji: '😊' },
-    { state: 'Surprise', description: 'When you try new combinations', emoji: '😮' },
-    { state: 'Care', description: 'When giving style advice', emoji: '🥰' },
-    { state: 'Excitement', description: 'When you win fashion battles', emoji: '🎉' },
+    { state: t.whoIsLumi.joy, description: t.whoIsLumi.joyDesc, emoji: '😊' },
+    { state: t.whoIsLumi.surprise, description: t.whoIsLumi.surpriseDesc, emoji: '😮' },
+    { state: t.whoIsLumi.care, description: t.whoIsLumi.careDesc, emoji: '🥰' },
+    { state: t.whoIsLumi.excitement, description: t.whoIsLumi.excitementDesc, emoji: '🎉' },
   ]
 
   return (
     <Section id="who-is-lumi" className="bg-cream-50">
       <SectionHeader
-        subtitle="Meet Your Companion"
-        title="Who is LUMI?"
-        description="LUMI is not a toy or decorative character. He is an AI cat assistant, the emotional interface of SIMPLARA, and a guide between you, your wardrobe, and the AI logic of the product."
+        subtitle={t.whoIsLumi.subtitle}
+        title={t.whoIsLumi.title}
+        description={t.whoIsLumi.description}
         centered
       />
 
@@ -36,11 +39,9 @@ export function WhoIsLumi() {
 
       <div className="mt-10 rounded-3xl bg-gradient-to-br from-terracotta-500/10 to-charcoal-900/5 p-6 md:p-8">
         <div className="max-w-3xl mx-auto text-center">
-          <h3 className="text-h2 mb-4">An Emotional AI Interface</h3>
+          <h3 className="text-h2 mb-4">{t.whoIsLumi.emotionalTitle}</h3>
           <p className="text-body-lg text-charcoal-500">
-            LUMI makes fashion decisions feel warmer and more personal. He transforms complex AI 
-            recommendations into friendly guidance, turning your wardrobe management into an engaging, 
-            living experience.
+            {t.whoIsLumi.emotionalDesc}
           </p>
         </div>
       </div>

@@ -2,31 +2,34 @@
 
 import { Section, SectionHeader } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export function WhereLumiLives() {
+  const { t } = useLanguage()
+
   const stages = [
     {
-      stage: 'Starting Space',
-      title: 'Humble Beginnings',
-      description: 'LUMI starts in a simple box or basic space. It&apos;s cozy but minimal.',
+      stage: t.whereLumi.startingSpace,
+      title: t.whereLumi.startingTitle,
+      description: t.whereLumi.startingDesc,
       icon: '📦',
     },
     {
-      stage: 'Basic Room',
-      title: 'First Home',
-      description: 'As you upload clothes and create outfits, LUMI gets his first real room with essential furniture.',
+      stage: t.whereLumi.basicRoom,
+      title: t.whereLumi.basicTitle,
+      description: t.whereLumi.basicDesc,
       icon: '🏠',
     },
     {
-      stage: 'Stylish Room',
-      title: 'Growing World',
-      description: 'Your fashion progress reflects in LUMI&apos;s space. Better décor, more personality, enhanced ambiance.',
+      stage: t.whereLumi.stylishRoom,
+      title: t.whereLumi.stylishTitle,
+      description: t.whereLumi.stylishDesc,
       icon: '✨',
     },
     {
-      stage: 'LUMI Home',
-      title: 'Complete Haven',
-      description: 'The ultimate space that showcases your fashion journey. A fully developed world that grows with your style.',
+      stage: t.whereLumi.lumiHome,
+      title: t.whereLumi.lumiHomeTitle,
+      description: t.whereLumi.lumiHomeDesc,
       icon: '🏡',
     },
   ]
@@ -34,9 +37,9 @@ export function WhereLumiLives() {
   return (
     <Section id="where-lumi-lives" className="bg-cream-50">
       <SectionHeader
-        subtitle="LUMI&apos;s World"
-        title="Where LUMI Lives"
-        description="LUMI starts in a simple space and gradually develops a room or a home. His world reflects your activity and fashion progress."
+        subtitle={t.whereLumi.subtitle}
+        title={t.whereLumi.title}
+        description={t.whereLumi.description}
         centered
       />
 
@@ -65,9 +68,7 @@ export function WhereLumiLives() {
 
       <div className="mt-10 text-center max-w-3xl mx-auto">
         <p className="text-body-lg text-charcoal-500">
-          LUMI&apos;s space is a living representation of your fashion journey. Every action you take 
-          in SIMPLARA contributes to building his world — making it richer, more personalized, 
-          and more meaningful.
+          {t.whereLumi.footerText}
         </p>
       </div>
     </Section>

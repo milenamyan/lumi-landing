@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ScrollToTop } from '@/components/ScrollToTop'
+import { LanguageProvider } from '@/lib/i18n/LanguageContext'
 import './globals.css'
 
 const inter = Inter({
@@ -57,7 +58,9 @@ export default function RootLayout({
           }}
         />
         <ScrollToTop />
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   )

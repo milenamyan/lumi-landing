@@ -2,43 +2,46 @@
 
 import { Section, SectionHeader } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export function ImproveLumiLife() {
+  const { t } = useLanguage()
+
   const actions = [
     {
-      action: 'Upload Clothes',
-      reward: 'LUMI learns your style and can create better outfit suggestions',
+      action: t.improveLumi.uploadClothes,
+      reward: t.improveLumi.uploadReward,
       lumens: '+10',
       icon: '👔',
     },
     {
-      action: 'Create Outfits',
-      reward: 'LUMI reacts to your creativity and helps refine your combinations',
+      action: t.improveLumi.createOutfits,
+      reward: t.improveLumi.createReward,
       lumens: '+15',
       icon: '✏️',
     },
     {
-      action: 'Save Looks',
-      reward: 'Successful outfits improve recommendation quality',
+      action: t.improveLumi.saveLooks,
+      reward: t.improveLumi.saveReward,
       lumens: '+20',
       icon: '⭐',
     },
     {
-      action: 'Vote in Battles',
-      reward: 'Participate socially and earn rewards to upgrade LUMI&apos;s space',
+      action: t.improveLumi.voteInBattles,
+      reward: t.improveLumi.voteReward,
       lumens: '+5',
       icon: '🗳️',
     },
     {
-      action: 'Join Battles',
-      reward: 'LUMI helps you prepare and analyzes results',
+      action: t.improveLumi.joinBattles,
+      reward: t.improveLumi.joinReward,
       lumens: '+30',
       icon: '⚔️',
     },
     {
-      action: 'Earn Lumens',
-      reward: 'Buy room items, décor, customization, and special LUMI states',
-      lumens: 'Spend',
+      action: t.improveLumi.earnLumens,
+      reward: t.improveLumi.earnReward,
+      lumens: t.improveLumi.spend,
       icon: '💎',
     },
   ]
@@ -46,9 +49,9 @@ export function ImproveLumiLife() {
   return (
     <Section id="improve-lumi" className="bg-cream-100">
       <SectionHeader
-        subtitle="The Game Loop"
-        title="How to Improve LUMI's Life"
-        description="You don't upgrade an abstract profile — you improve the life of a character. The more actively you work with your style, the better LUMI's world becomes."
+        subtitle={t.improveLumi.subtitle}
+        title={t.improveLumi.title}
+        description={t.improveLumi.description}
         centered
       />
 
@@ -62,7 +65,7 @@ export function ImproveLumiLife() {
             <div className="flex items-start justify-between mb-4">
               <div className="text-4xl">{item.icon}</div>
               <div className="rounded-full bg-terracotta-500/10 px-3 py-1 text-body-sm font-semibold text-terracotta-500">
-                {item.lumens} Lumens
+                {item.lumens} {t.improveLumi.lumens}
               </div>
             </div>
             <h3 className="text-h4 mb-2">{item.action}</h3>
@@ -75,23 +78,23 @@ export function ImproveLumiLife() {
         <div className="grid gap-6 md:grid-cols-3 text-center">
           <div>
             <div className="text-display-3 font-bold text-charcoal-900 mb-2">💰</div>
-            <h4 className="text-h4 mb-2">Earn Lumens</h4>
+            <h4 className="text-h4 mb-2">{t.improveLumi.earnTitle}</h4>
             <p className="text-body-sm text-charcoal-500">
-              Complete actions to earn the in-app currency
+              {t.improveLumi.earnDesc}
             </p>
           </div>
           <div>
             <div className="text-display-3 font-bold text-charcoal-900 mb-2">🛋️</div>
-            <h4 className="text-h4 mb-2">Upgrade Space</h4>
+            <h4 className="text-h4 mb-2">{t.improveLumi.upgradeTitle}</h4>
             <p className="text-body-sm text-charcoal-500">
-              Buy furniture, décor, and items for LUMI&apos;s room
+              {t.improveLumi.upgradeDesc}
             </p>
           </div>
           <div>
             <div className="text-display-3 font-bold text-charcoal-900 mb-2">📈</div>
-            <h4 className="text-h4 mb-2">See Progress</h4>
+            <h4 className="text-h4 mb-2">{t.improveLumi.progressTitle}</h4>
             <p className="text-body-sm text-charcoal-500">
-              Watch LUMI&apos;s world evolve as your fashion journey grows
+              {t.improveLumi.progressDesc}
             </p>
           </div>
         </div>

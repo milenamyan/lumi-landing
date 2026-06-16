@@ -3,11 +3,14 @@
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
+import { LanguageSwitcher } from '@/components/LanguageSwitcher'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const navRef = useRef<HTMLElement>(null)
+  const { t } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,10 +44,10 @@ export function Navigation() {
   const simplaraUrl = 'https://simplara-landing.vercel.app/ru'
 
   const navLinks = [
-    { label: 'About LUMI', href: 'who-is-lumi' },
-    { label: 'Features', href: 'outfit-selection' },
-    { label: 'Battles', href: 'fashion-battles' },
-    { label: 'FAQ', href: 'faq' },
+    { label: t.nav.aboutLumi, href: 'who-is-lumi' },
+    { label: t.nav.features, href: 'outfit-selection' },
+    { label: t.nav.battles, href: 'fashion-battles' },
+    { label: t.nav.faq, href: 'faq' },
   ]
 
   return (
@@ -77,7 +80,7 @@ export function Navigation() {
             </button>
 
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center gap-8">
+            <div className="hidden md:flex items-center gap-6">
               {navLinks.map((link) => (
                 <button
                   key={link.href}
@@ -102,12 +105,13 @@ export function Navigation() {
                   className="h-9 w-9 object-contain"
                 />
               </a>
+              <LanguageSwitcher />
               <Button
                 variant="primary"
                 size="sm"
                 onClick={() => scrollToSection('waitlist')}
               >
-                Join Waitlist
+                {t.nav.joinWaitlist}
               </Button>
             </div>
 
@@ -159,15 +163,18 @@ export function Navigation() {
                   height={28}
                   className="h-7 w-7 object-contain"
                 />
-                Visit SIMPLARA
+                {t.nav.visitSimplara}
               </a>
+              <div className="flex justify-center py-2">
+                <LanguageSwitcher />
+              </div>
               <Button
                 variant="primary"
                 size="md"
                 onClick={() => scrollToSection('waitlist')}
                 className="w-full"
               >
-                Join Waitlist
+                {t.nav.joinWaitlist}
               </Button>
             </div>
           </div>

@@ -2,37 +2,40 @@
 
 import { Section, SectionHeader } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export function OutfitEvaluation() {
+  const { t } = useLanguage()
+
   const criteria = [
     {
-      title: 'Color Harmony',
-      description: 'How well colors and textures work together',
+      title: t.outfitEvaluation.colorHarmony,
+      description: t.outfitEvaluation.colorDesc,
       icon: '🎨',
     },
     {
-      title: 'Occasion Relevance',
-      description: 'Appropriateness for the event or task',
+      title: t.outfitEvaluation.occasionRelevance,
+      description: t.outfitEvaluation.occasionDesc,
       icon: '🎯',
     },
     {
-      title: 'Seasonal Fit',
-      description: 'Weather and season considerations',
+      title: t.outfitEvaluation.seasonalFit,
+      description: t.outfitEvaluation.seasonalDesc,
       icon: '🌤️',
     },
     {
-      title: 'Balance',
-      description: 'Proportion of top, bottom, shoes, accessories',
+      title: t.outfitEvaluation.balance,
+      description: t.outfitEvaluation.balanceDesc,
       icon: '⚖️',
     },
     {
-      title: 'Wardrobe Usage',
-      description: 'How well you&apos;re using existing pieces',
+      title: t.outfitEvaluation.wardrobeUsage,
+      description: t.outfitEvaluation.wardrobeDesc,
       icon: '📊',
     },
     {
-      title: 'Improvement Tips',
-      description: 'Suggestions to strengthen the outfit',
+      title: t.outfitEvaluation.improvementTips,
+      description: t.outfitEvaluation.improvementDesc,
       icon: '💡',
     },
   ]
@@ -40,9 +43,9 @@ export function OutfitEvaluation() {
   return (
     <Section id="outfit-evaluation" className="bg-cream-100">
       <SectionHeader
-        subtitle="Private & Useful Feedback"
-        title="Outfit Evaluation in the Room"
-        description="Inside the room, LUMI evaluates the outfit composition, not the person. The feedback is soft, helpful, and designed to build your confidence."
+        subtitle={t.outfitEvaluation.subtitle}
+        title={t.outfitEvaluation.title}
+        description={t.outfitEvaluation.description}
         centered
       />
 
@@ -67,10 +70,9 @@ export function OutfitEvaluation() {
               ✓
             </div>
             <div>
-              <h4 className="text-h4 mb-2">Strong Point of the Outfit</h4>
+              <h4 className="text-h4 mb-2">{t.outfitEvaluation.strongPoint}</h4>
               <p className="text-body text-charcoal-500">
-                &quot;The color palette is cohesive and sophisticated. The navy and cream combination 
-                creates a clean, professional look.&quot;
+                {t.outfitEvaluation.strongExample}
               </p>
             </div>
           </div>
@@ -82,10 +84,9 @@ export function OutfitEvaluation() {
               💡
             </div>
             <div>
-              <h4 className="text-h4 mb-2">What Can Be Improved</h4>
+              <h4 className="text-h4 mb-2">{t.outfitEvaluation.improvement}</h4>
               <p className="text-body text-charcoal-500">
-                &quot;Consider adding a statement accessory to elevate the look. A leather belt or 
-                watch would add visual interest.&quot;
+                {t.outfitEvaluation.improvementExample}
               </p>
             </div>
           </div>
@@ -97,10 +98,9 @@ export function OutfitEvaluation() {
               🔄
             </div>
             <div>
-              <h4 className="text-h4 mb-2">Try Replacing This</h4>
+              <h4 className="text-h4 mb-2">{t.outfitEvaluation.tryReplacing}</h4>
               <p className="text-body text-charcoal-500">
-                &quot;The sneakers work, but brown leather shoes from your wardrobe would match 
-                the belt and create a more polished ensemble.&quot;
+                {t.outfitEvaluation.tryReplacingExample}
               </p>
             </div>
           </div>
@@ -109,11 +109,10 @@ export function OutfitEvaluation() {
 
       <div className="mt-8 text-center max-w-3xl mx-auto">
         <p className="text-h4 text-charcoal-900 mb-4">
-          &quot;LUMI does not set beauty standards. LUMI helps reveal your style.&quot;
+          {t.outfitEvaluation.quote}
         </p>
         <p className="text-body text-charcoal-500">
-          Evaluation is private, constructive, and focused on helping you use your wardrobe 
-          with more confidence. LUMI never judges your appearance — only outfit composition.
+          {t.outfitEvaluation.quoteDesc}
         </p>
       </div>
     </Section>

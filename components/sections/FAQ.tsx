@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import { Section, SectionHeader } from '@/components/ui/Section'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 interface FAQItem {
   question: string
@@ -9,48 +10,49 @@ interface FAQItem {
 }
 
 export function FAQ() {
+  const { t } = useLanguage()
   const [openIndex, setOpenIndex] = useState<number | null>(0)
 
   const faqs: FAQItem[] = [
     {
-      question: 'Who is LUMI?',
-      answer: 'LUMI is an AI cat assistant who lives inside SIMPLARA. He is your personal fashion companion who helps you choose outfits, evaluates style, and supports you in fashion battles. LUMI is not just a mascot — he is an emotional AI interface that makes fashion decisions warmer and more personal.',
+      question: t.faq.q1,
+      answer: t.faq.a1,
     },
     {
-      question: 'Where does LUMI live?',
-      answer: 'LUMI lives in his own room inside the SIMPLARA app. He starts in a simple space and gradually develops a more elaborate home as you engage with your wardrobe. His world reflects your fashion progress and activity.',
+      question: t.faq.q2,
+      answer: t.faq.a2,
     },
     {
-      question: 'Is LUMI only for women?',
-      answer: 'No! LUMI helps both men and women look more stylish with the clothes they already own. The AI understands different styles, preferences, and fashion needs regardless of gender.',
+      question: t.faq.q3,
+      answer: t.faq.a3,
     },
     {
-      question: 'Do I need to buy new clothes?',
-      answer: 'Not at all. LUMI works with your existing wardrobe. The goal is to help you discover new combinations, use forgotten pieces, and feel more confident with what you already own. No pressure to purchase anything.',
+      question: t.faq.q4,
+      answer: t.faq.a4,
     },
     {
-      question: 'How does LUMI\'s room improve?',
-      answer: 'LUMI\'s space evolves based on your activity. When you upload clothes, create outfits, participate in battles, and earn Lumens, you unlock the ability to upgrade his room with better furniture, décor, and items. The more you engage with your style, the richer LUMI\'s world becomes.',
+      question: t.faq.q5,
+      answer: t.faq.a5,
     },
     {
-      question: 'How does outfit evaluation work?',
-      answer: 'LUMI evaluates outfit composition, not your appearance. He looks at color harmony, occasion relevance, seasonal appropriateness, balance, and wardrobe usage. The feedback is private, constructive, and designed to help you improve — never to judge or criticize.',
+      question: t.faq.q6,
+      answer: t.faq.a6,
     },
     {
-      question: 'What are outfit battles?',
-      answer: 'Fashion battles are friendly competitions where users compare outfits. LUMI helps you prepare by suggesting improvements, provides AI analysis during the battle, and explains results afterward. Battles are decided by community voting with LUMI\'s evaluation as a transparent analytical layer.',
+      question: t.faq.q7,
+      answer: t.faq.a7,
     },
     {
-      question: 'Is this pay-to-win?',
-      answer: 'No. Battle outcomes are determined by outfit quality and community votes, not by how much you spend. Room upgrades are cosmetic and don\'t provide unfair advantages. LUMI helps everyone improve their style through honest feedback and guidance.',
+      question: t.faq.q8,
+      answer: t.faq.a8,
     },
     {
-      question: 'When can I try SIMPLARA and meet LUMI?',
-      answer: 'We\'re currently in development and building the waitlist. Join early access to be among the first to enter LUMI\'s world, test features, and help shape the experience.',
+      question: t.faq.q9,
+      answer: t.faq.a9,
     },
     {
-      question: 'How can I follow LUMI outside the app?',
-      answer: 'Follow @itslumicat on Instagram and TikTok for daily fashion content, style tips, relatable moments, and behind-the-scenes looks at how LUMI thinks about fashion.',
+      question: t.faq.q10,
+      answer: t.faq.a10,
     },
   ]
 
@@ -61,9 +63,9 @@ export function FAQ() {
   return (
     <Section id="faq" className="bg-cream-100">
       <SectionHeader
-        subtitle="Questions & Answers"
-        title="Frequently Asked Questions"
-        description="Everything you need to know about LUMI and SIMPLARA"
+        subtitle={t.faq.subtitle}
+        title={t.faq.title}
+        description={t.faq.description}
         centered
       />
 
