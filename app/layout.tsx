@@ -28,6 +28,7 @@ export const metadata: Metadata = {
     width: 'device-width',
     initialScale: 1,
     maximumScale: 5,
+    colorScheme: 'light',
   },
   openGraph: {
     title: 'LUMI - Your AI Fashion Companion',
@@ -49,7 +50,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={inter.variable} style={{ colorScheme: 'light' }}>
       <body className="font-sans">
         <script
           dangerouslySetInnerHTML={{

@@ -23,6 +23,7 @@
 
   html {
     scroll-behavior: smooth;
+    color-scheme: light only;
   }
 }
 
@@ -71,5 +72,11 @@
 
   .btn-tertiary {
     @apply inline-flex items-center justify-center px-6 py-3 text-body font-medium text-charcoal-900 transition-all duration-300 hover:text-terracotta-500;
+  }
+
+  .lumi-video-frame {
+    background-color: #ffffff !important;
+    color-scheme: light only;
+    forced-color-adjust: none;
   }
 }
