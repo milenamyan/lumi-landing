@@ -3,30 +3,33 @@
 import { Section, SectionHeader } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
 import { Button } from '@/components/ui/Button'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 const instagramUrl = 'https://www.instagram.com/itslumicat?igsh=MTRid243ZWJ2ZWIwdQ=='
 const tiktokUrl = 'https://www.tiktok.com/@itslumi.cat?_r=1&_t=ZS-97ENKXEzIxd'
 
 export function MediaCharacter() {
+  const { t } = useLanguage()
+
   const contentTypes = [
     {
-      type: 'Episodes',
-      description: 'Short stories about LUMI&apos;s adventures in fashion',
+      type: t.mediaCharacter.episodes,
+      description: t.mediaCharacter.episodesDesc,
       icon: '🎬',
     },
     {
-      type: 'Reactions',
-      description: 'LUMI responds to trending fashion moments',
+      type: t.mediaCharacter.reactions,
+      description: t.mediaCharacter.reactionsDesc,
       icon: '😹',
     },
     {
-      type: 'Tips',
-      description: 'Quick style advice in bite-sized formats',
+      type: t.mediaCharacter.tips,
+      description: t.mediaCharacter.tipsDesc,
       icon: '💡',
     },
     {
-      type: 'Behind Scenes',
-      description: 'How LUMI thinks about outfits and style',
+      type: t.mediaCharacter.behindScenes,
+      description: t.mediaCharacter.behindScenesDesc,
       icon: '🎭',
     },
   ]
@@ -34,9 +37,9 @@ export function MediaCharacter() {
   return (
     <Section id="media-character" className="bg-cream-50">
       <SectionHeader
-        subtitle="Beyond the App"
-        title="LUMI as a Media Character"
-        description="LUMI lives beyond SIMPLARA — in short episodes, memes, Reels, and relatable fashion content. Follow his journey and be part of the community."
+        subtitle={t.mediaCharacter.subtitle}
+        title={t.mediaCharacter.title}
+        description={t.mediaCharacter.description}
         centered
       />
 
@@ -57,10 +60,9 @@ export function MediaCharacter() {
       <div className="rounded-3xl bg-gradient-to-br from-terracotta-500/10 to-charcoal-900/5 p-6 md:p-8 text-center">
         <div className="max-w-2xl mx-auto">
           <div className="text-6xl mb-6">📱</div>
-          <h3 className="text-h2 mb-4">Follow @itslumicat</h3>
+          <h3 className="text-h2 mb-4">{t.mediaCharacter.followTitle}</h3>
           <p className="text-body-lg text-charcoal-500 mb-8">
-            Join thousands of fashion enthusiasts following LUMI&apos;s daily adventures. 
-            Get style tips, laugh at relatable moments, and be first to know about SIMPLARA updates.
+            {t.mediaCharacter.followDesc}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
@@ -68,14 +70,14 @@ export function MediaCharacter() {
               size="lg"
               onClick={() => window.open(instagramUrl, '_blank', 'noopener,noreferrer')}
             >
-              Instagram
+              {t.mediaCharacter.instagram}
             </Button>
             <Button
               variant="secondary"
               size="lg"
               onClick={() => window.open(tiktokUrl, '_blank', 'noopener,noreferrer')}
             >
-              TikTok
+              {t.mediaCharacter.tiktok}
             </Button>
           </div>
         </div>
@@ -84,15 +86,15 @@ export function MediaCharacter() {
       <div className="mt-8 grid gap-6 md:grid-cols-3">
         <Card className="text-center">
           <p className="text-display-3 font-bold text-terracotta-500 mb-2">50K+</p>
-          <p className="text-body text-charcoal-500">Followers</p>
+          <p className="text-body text-charcoal-500">{t.mediaCharacter.followers}</p>
         </Card>
         <Card className="text-center">
           <p className="text-display-3 font-bold text-terracotta-500 mb-2">200+</p>
-          <p className="text-body text-charcoal-500">Episodes</p>
+          <p className="text-body text-charcoal-500">{t.mediaCharacter.episodesCount}</p>
         </Card>
         <Card className="text-center">
           <p className="text-display-3 font-bold text-terracotta-500 mb-2">10M+</p>
-          <p className="text-body text-charcoal-500">Views</p>
+          <p className="text-body text-charcoal-500">{t.mediaCharacter.views}</p>
         </Card>
       </div>
     </Section>

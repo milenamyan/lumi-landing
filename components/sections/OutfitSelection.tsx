@@ -2,50 +2,53 @@
 
 import { Section, SectionHeader } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export function OutfitSelection() {
+  const { t } = useLanguage()
+
   const occasions = [
     {
-      title: 'Today',
-      description: 'Perfect for current weather and your daily routine',
+      title: t.outfitSelection.today,
+      description: t.outfitSelection.todayDesc,
       icon: '☀️',
-      items: ['Casual shirt', 'Comfortable jeans', 'Sneakers'],
+      items: [t.outfitSelection.casualShirt, t.outfitSelection.comfortableJeans, t.outfitSelection.sneakers],
     },
     {
-      title: 'Meeting',
-      description: 'Professional yet personal, matched to your style',
+      title: t.outfitSelection.meeting,
+      description: t.outfitSelection.meetingDesc,
       icon: '💼',
-      items: ['Blazer', 'Dress shirt', 'Smart shoes'],
+      items: [t.outfitSelection.blazer, t.outfitSelection.dressShirt, t.outfitSelection.smartShoes],
     },
     {
-      title: 'Evening',
-      description: 'Elevated combinations for special occasions',
+      title: t.outfitSelection.evening,
+      description: t.outfitSelection.eveningDesc,
       icon: '🌙',
-      items: ['Stylish top', 'Dark jeans', 'Elegant shoes'],
+      items: [t.outfitSelection.stylishTop, t.outfitSelection.darkJeans, t.outfitSelection.elegantShoes],
     },
     {
-      title: 'Weekend',
-      description: 'Relaxed but put-together looks',
+      title: t.outfitSelection.weekend,
+      description: t.outfitSelection.weekendDesc,
       icon: '🎨',
-      items: ['Cozy sweater', 'Relaxed pants', 'Comfortable boots'],
+      items: [t.outfitSelection.cozySweater, t.outfitSelection.relaxedPants, t.outfitSelection.comfortableBoots],
     },
   ]
 
   const features = [
-    'Works with your real clothes, not abstract examples',
-    'Considers weather, occasion, mood, and style',
-    'Brings forgotten items back into rotation',
-    'Shows new combinations within existing wardrobe',
-    'Explains why an outfit works',
-    'Respects your personal style preferences',
+    t.outfitSelection.feature1,
+    t.outfitSelection.feature2,
+    t.outfitSelection.feature3,
+    t.outfitSelection.feature4,
+    t.outfitSelection.feature5,
+    t.outfitSelection.feature6,
   ]
 
   return (
     <Section id="outfit-selection" className="bg-cream-50">
       <SectionHeader
-        subtitle="AI-Powered Selection"
-        title="LUMI and Outfit Selection"
-        description="LUMI suggests outfits from your real clothes and helps you look better without needing to buy new items."
+        subtitle={t.outfitSelection.subtitle}
+        title={t.outfitSelection.title}
+        description={t.outfitSelection.description}
         centered
       />
 
@@ -71,7 +74,7 @@ export function OutfitSelection() {
       </div>
 
       <div className="rounded-3xl bg-gradient-to-br from-cream-100 to-cream-200 p-6 md:p-8">
-        <h3 className="text-h2 mb-6 text-center">How LUMI Helps You</h3>
+        <h3 className="text-h2 mb-6 text-center">{t.outfitSelection.howLumiHelps}</h3>
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 max-w-5xl mx-auto">
           {features.map((feature, index) => (
             <div 

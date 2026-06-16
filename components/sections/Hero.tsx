@@ -2,10 +2,13 @@
 
 import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 const simplaraUrl = 'https://simplara-landing.vercel.app/ru'
 
 export function Hero() {
+  const { t } = useLanguage()
+
   return (
     <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-b from-cream-50 to-cream-100 pt-24 pb-12 md:pt-28 md:pb-16">
       <div className="container-custom">
@@ -13,7 +16,7 @@ export function Hero() {
           {/* Left Column - Content */}
           <div className="order-2 lg:order-1 animate-fade-in">
             <h1 className="mb-4 text-display-2 md:text-display-1 text-balance">
-              This is <span className="gradient-text">LUMI</span> — the AI cat who helps you look more stylish
+              {t.hero.title}<span className="gradient-text">{t.hero.titleHighlight}</span> — the AI cat who helps you look more stylish
             </h1>
             <p className="mb-6 text-body-lg text-charcoal-500 max-w-2xl">
               He lives inside{' '}
@@ -32,31 +35,30 @@ export function Hero() {
                   className="h-7 w-7 object-contain inline-block"
                 />
               </a>
-              , builds outfits from your wardrobe, helps evaluate style, and supports you in fashion
-              battles. LUMI is not just a mascot — he&apos;s your personal fashion companion.
+              {t.hero.description}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Button size="lg" onClick={() => document.getElementById('waitlist')?.scrollIntoView({ behavior: 'smooth' })}>
-                Meet LUMI
+                {t.hero.meetButton}
               </Button>
               <Button variant="secondary" size="lg" onClick={() => document.getElementById('who-is-lumi')?.scrollIntoView({ behavior: 'smooth' })}>
-                See LUMI in Action
+                {t.hero.seeActionButton}
               </Button>
             </div>
             
             {/* Trust Indicators */}
             <div className="mt-8 flex flex-wrap gap-6 text-body-sm text-charcoal-500">
               <div>
-                <p className="font-semibold text-charcoal-900">AI-Powered</p>
-                <p>Style Assistant</p>
+                <p className="font-semibold text-charcoal-900">{t.hero.aiPowered}</p>
+                <p>{t.hero.styleAssistant}</p>
               </div>
               <div>
-                <p className="font-semibold text-charcoal-900">For Everyone</p>
-                <p>Men & Women</p>
+                <p className="font-semibold text-charcoal-900">{t.hero.forEveryone}</p>
+                <p>{t.hero.menAndWomen}</p>
               </div>
               <div>
-                <p className="font-semibold text-charcoal-900">Works With</p>
-                <p>Your Wardrobe</p>
+                <p className="font-semibold text-charcoal-900">{t.hero.worksWith}</p>
+                <p>{t.hero.yourWardrobe}</p>
               </div>
             </div>
           </div>

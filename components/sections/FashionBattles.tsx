@@ -2,25 +2,28 @@
 
 import { Section, SectionHeader } from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export function FashionBattles() {
+  const { t } = useLanguage()
+
   const battlePhases = [
     {
-      phase: 'Before Battle',
-      title: 'Preparation',
-      description: 'LUMI helps you choose a stronger outfit and gives preliminary advice',
+      phase: t.fashionBattles.beforeBattle,
+      title: t.fashionBattles.preparation,
+      description: t.fashionBattles.preparationDesc,
       icon: '🎯',
     },
     {
-      phase: 'During Battle',
-      title: 'AI Evaluation',
-      description: 'LUMI&apos;s analysis becomes part of the result alongside user voting',
+      phase: t.fashionBattles.duringBattle,
+      title: t.fashionBattles.aiEvaluation,
+      description: t.fashionBattles.aiEvaluationDesc,
       icon: '⚔️',
     },
     {
-      phase: 'After Battle',
-      title: 'Feedback',
-      description: 'Win or lose, LUMI explains what worked and what can be improved',
+      phase: t.fashionBattles.afterBattle,
+      title: t.fashionBattles.feedback,
+      description: t.fashionBattles.feedbackDesc,
       icon: '📊',
     },
   ]
@@ -28,9 +31,9 @@ export function FashionBattles() {
   return (
     <Section id="fashion-battles" className="bg-cream-50">
       <SectionHeader
-        subtitle="Competitive Fashion"
-        title="LUMI in Fashion Battles"
-        description="In battles, LUMI acts as your assistant, analyst, and explainable AI judge. He helps you compete fairly and learn from every match."
+        subtitle={t.fashionBattles.subtitle}
+        title={t.fashionBattles.title}
+        description={t.fashionBattles.description}
         centered
       />
 
@@ -52,33 +55,33 @@ export function FashionBattles() {
       </div>
 
       <div className="rounded-3xl bg-gradient-to-br from-charcoal-900/5 to-cream-100 p-6 md:p-8">
-        <h3 className="text-h2 mb-6 text-center">Battle Result Layers</h3>
+        <h3 className="text-h2 mb-6 text-center">{t.fashionBattles.battleResultLayers}</h3>
         <div className="grid gap-6 md:grid-cols-3 max-w-5xl mx-auto">
           <div className="text-center">
             <div className="w-16 h-16 rounded-full bg-terracotta-500 flex items-center justify-center text-cream-50 text-h3 mx-auto mb-4">
               1
             </div>
-            <h4 className="text-h4 mb-2">User Voting</h4>
+            <h4 className="text-h4 mb-2">{t.fashionBattles.userVoting}</h4>
             <p className="text-body-sm text-charcoal-500">
-              The main layer — real people decide which outfit they prefer
+              {t.fashionBattles.userVotingDesc}
             </p>
           </div>
           <div className="text-center">
             <div className="w-16 h-16 rounded-full bg-charcoal-900 flex items-center justify-center text-cream-50 text-h3 mx-auto mb-4">
               2
             </div>
-            <h4 className="text-h4 mb-2">LUMI AI Evaluation</h4>
+            <h4 className="text-h4 mb-2">{t.fashionBattles.lumiAI}</h4>
             <p className="text-body-sm text-charcoal-500">
-              Analytical layer that explains style strength and harmony
+              {t.fashionBattles.lumiAIDesc}
             </p>
           </div>
           <div className="text-center">
             <div className="w-16 h-16 rounded-full bg-cream-400 flex items-center justify-center text-charcoal-900 text-h3 mx-auto mb-4">
               3
             </div>
-            <h4 className="text-h4 mb-2">Lumen Stake</h4>
+            <h4 className="text-h4 mb-2">{t.fashionBattles.lumenStake}</h4>
             <p className="text-body-sm text-charcoal-500">
-              Optional game-risk layer that adds excitement
+              {t.fashionBattles.lumenStakeDesc}
             </p>
           </div>
         </div>
@@ -86,17 +89,15 @@ export function FashionBattles() {
 
       <div className="mt-8 max-w-3xl mx-auto space-y-4">
         <Card className="bg-gradient-to-br from-terracotta-500/10 to-cream-50">
-          <h4 className="text-h4 mb-2">For Winners</h4>
+          <h4 className="text-h4 mb-2">{t.fashionBattles.forWinners}</h4>
           <p className="text-body text-charcoal-500">
-            &quot;Your outfit won because of strong color harmony and great occasion fit. 
-            The community loved the confident styling choices!&quot;
+            {t.fashionBattles.winnersExample}
           </p>
         </Card>
         <Card className="bg-gradient-to-br from-charcoal-900/5 to-cream-50">
-          <h4 className="text-h4 mb-2">For Participants</h4>
+          <h4 className="text-h4 mb-2">{t.fashionBattles.forParticipants}</h4>
           <p className="text-body text-charcoal-500">
-            &quot;Great effort! Your outfit had solid fundamentals. Next time, try adding a 
-            focal point accessory to make the look more memorable.&quot;
+            {t.fashionBattles.participantsExample}
           </p>
         </Card>
       </div>

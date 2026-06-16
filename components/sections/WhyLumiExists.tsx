@@ -2,24 +2,27 @@
 
 import { Section, SectionHeader } from '@/components/ui/Section'
 import { FeatureCard } from '@/components/ui/Card'
+import { useLanguage } from '@/lib/i18n/LanguageContext'
 
 export function WhyLumiExists() {
+  const { t } = useLanguage()
+
   const benefits = [
     {
-      title: 'Simpler Mornings',
-      description: 'Open the app, get an outfit suggestion, and start your day with confidence. No more standing in front of the closet wondering what to wear.',
+      title: t.whyLumi.simplerTitle,
+      description: t.whyLumi.simplerDesc,
     },
     {
-      title: 'Warmer Decisions',
-      description: 'LUMI makes style choices feel personal and supported, not algorithmic or cold. Fashion becomes a conversation, not a calculation.',
+      title: t.whyLumi.warmerTitle,
+      description: t.whyLumi.warmerDesc,
     },
     {
-      title: 'Better Combinations',
-      description: 'Discover new ways to wear what you already own. LUMI helps you see potential in forgotten pieces and creates fresh looks from familiar items.',
+      title: t.whyLumi.betterTitle,
+      description: t.whyLumi.betterDesc,
     },
     {
-      title: 'Feeling of Progress',
-      description: 'Watch your style evolve and LUMI&apos;s world grow. Every outfit you create, every battle you join contributes to a living fashion journey.',
+      title: t.whyLumi.progressTitle,
+      description: t.whyLumi.progressDesc,
     },
   ]
 
@@ -28,17 +31,16 @@ export function WhyLumiExists() {
       <div className="grid gap-8 lg:grid-cols-2 items-center mb-10">
         <div>
           <SectionHeader
-            subtitle="The Everyday Value"
-            title="Why LUMI Exists"
-            description="LUMI makes outfit selection simpler, warmer, and more habitual."
+            subtitle={t.whyLumi.subtitle}
+            title={t.whyLumi.title}
+            description={t.whyLumi.description}
           />
         </div>
         <div className="rounded-3xl bg-cream-200 p-8 text-center">
           <p className="text-display-3 mb-4">🌅</p>
-          <h3 className="text-h3 mb-3">Morning Scenario</h3>
+          <h3 className="text-h3 mb-3">{t.whyLumi.morningTitle}</h3>
           <p className="text-body text-charcoal-500">
-            Wake up → Open SIMPLARA → See LUMI&apos;s suggestion → Get dressed with confidence → 
-            Start your day looking great
+            {t.whyLumi.morningScenario}
           </p>
         </div>
       </div>
