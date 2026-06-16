@@ -11,7 +11,7 @@ export function Hero() {
       <div className="container-custom">
         <div className="grid gap-8 lg:grid-cols-2 lg:gap-10 items-center">
           {/* Left Column - Content */}
-          <div className="animate-fade-in">
+          <div className="order-2 lg:order-1 animate-fade-in">
             <h1 className="mb-4 text-display-2 md:text-display-1 text-balance">
               This is <span className="gradient-text">LUMI</span> — the AI cat who helps you look more stylish
             </h1>
@@ -62,23 +62,74 @@ export function Hero() {
           </div>
 
           {/* Right Column - LUMI Image */}
-          <div className="relative animate-slide-in-right">
+          <div className="order-1 lg:order-2 relative animate-slide-in-right">
             {/* Outer layer — visible as border frame */}
-            <div className="relative flex aspect-square items-center justify-center rounded-3xl bg-cream-300">
-              {/* Inner layer — 75% size, slightly brighter */}
-              <div
-                className="lumi-video-frame relative flex h-[75%] w-[75%] items-center justify-center rounded-2xl p-6 sm:p-8 md:p-10"
-                style={{ backgroundColor: '#ffffff' }}
-              >
-                <div className="relative h-full w-full flex items-center justify-center animate-float">
-                  <video
-                    className="h-full w-full object-contain"
-                    src="/assets/lumi-final.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
+            <div className="relative flex aspect-square items-center justify-center rounded-3xl overflow-hidden">
+              {/* Video behind */}
+              <div className="absolute inset-0 flex items-center justify-center p-6 sm:p-8 md:p-10 animate-float">
+                <video
+                  className="h-[99%] w-[99%] translate-y-0.5 object-contain sm:translate-y-1.5"
+                  src="/assets/lumi-final.mp4"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                />
+              </div>
+
+              {/* First bg as rounded-square overlay with circular cutout */}
+              <div className="pointer-events-none absolute inset-0 z-10 text-cream-300">
+                <svg viewBox="0 0 100 100" className="h-full w-full" aria-hidden="true" focusable="false">
+                  <path
+                    fill="currentColor"
+                    fillRule="evenodd"
+                    d="
+                      M18 0
+                      H82
+                      C92 0 100 8 100 18
+                      V82
+                      C100 92 92 100 82 100
+                      H18
+                      C8 100 0 92 0 82
+                      V18
+                      C0 8 8 0 18 0
+                      Z
+                      M50 50
+                      m -41 0
+                      a 41 41 0 1 0 82 0
+                      a 41 41 0 1 0 -82 0
+                      Z
+                    "
                   />
+                </svg>
+              </div>
+
+              {/* Second bg/frame on top of first bg */}
+              <div className="pointer-events-none absolute inset-0 z-20 flex items-center justify-center">
+                <div className="h-[85%] w-[85%] text-cream-500">
+                  <svg viewBox="0 0 100 100" className="h-full w-full" aria-hidden="true" focusable="false">
+                    <path
+                      fill="currentColor"
+                      fillRule="evenodd"
+                      d="
+                        M18 0
+                        H82
+                        C92 0 100 8 100 18
+                        V82
+                        C100 92 92 100 82 100
+                        H18
+                        C8 100 0 92 0 82
+                        V18
+                        C0 8 8 0 18 0
+                        Z
+                        M50 50
+                        m -41 0
+                        a 41 41 0 1 0 82 0
+                        a 41 41 0 1 0 -82 0
+                        Z
+                      "
+                    />
+                  </svg>
                 </div>
               </div>
             </div>
