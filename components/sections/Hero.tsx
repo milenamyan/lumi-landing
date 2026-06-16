@@ -66,15 +66,15 @@ export function Hero() {
             {/* Outer layer — visible as border frame */}
             <div className="relative flex aspect-square items-center justify-center rounded-3xl bg-cream-300">
               {/* Inner layer — 75% size, slightly brighter */}
-              <div className="relative flex h-[75%] w-[75%] items-center justify-center rounded-2xl bg-cream-100 p-6 sm:p-8 md:p-10">
+              <div className="relative flex h-[75%] w-[75%] items-center justify-center rounded-2xl bg-white p-6 sm:p-8 md:p-10">
                 <div className="relative h-full w-full flex items-center justify-center animate-float">
-                  <Image
-                    src="/assets/lumi1.png"
-                    alt="LUMI - AI Fashion Companion"
-                    width={400}
-                    height={400}
-                    className="object-contain drop-shadow-lg"
-                    priority
+                  <video
+                    className="h-full w-full object-contain"
+                    src="/assets/lumi-final.mp4"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
                   />
                 </div>
               </div>
