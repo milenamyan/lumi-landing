@@ -14,6 +14,8 @@ export interface Translations {
   hero: {
     title: string
     titleHighlight: string
+    titleSuffix: string
+    helivesInside: string
     description: string
     meetButton: string
     seeActionButton: string
@@ -236,22 +238,9 @@ export interface Translations {
     subtitle: string
     title: string
     description: string
-    nameLabel: string
-    namePlaceholder: string
-    emailLabel: string
-    emailPlaceholder: string
-    cityLabel: string
-    cityPlaceholder: string
-    interestLabel: string
-    earlyAccess: string
-    mvpTesting: string
-    followContent: string
-    allAbove: string
-    submitButton: string
-    privacyText: string
-    successTitle: string
-    successDesc: string
-    anotherEntry: string
+    ctaDescription: string
+    ctaButton: string
+    noteText: string
   }
   // FAQ section
   faq: {
@@ -306,12 +295,14 @@ export const translations: Record<Language, Translations> = {
       features: 'Features',
       battles: 'Battles',
       faq: 'FAQ',
-      joinWaitlist: 'Join Waitlist',
+      joinWaitlist: 'Try SIMPLARA',
       visitSimplara: 'Visit SIMPLARA',
     },
     hero: {
       title: 'This is ',
       titleHighlight: 'LUMI',
+      titleSuffix: ' — the AI cat who helps you look more stylish',
+      helivesInside: 'He lives inside',
       description: ', builds outfits from your wardrobe, helps evaluate style, and supports you in fashion battles. LUMI is not just a mascot — he\'s your personal fashion companion.',
       meetButton: 'Meet LUMI',
       seeActionButton: 'See LUMI in Action',
@@ -502,7 +493,7 @@ export const translations: Record<Language, Translations> = {
     },
     mediaCharacter: {
       subtitle: 'Beyond the App',
-      title: 'LUMI as a Media Character',
+      title: 'Follow LUMI on Social Media',
       description: 'LUMI lives beyond SIMPLARA — in short episodes, memes, Reels, and relatable fashion content. Follow his journey and be part of the community.',
       episodes: 'Episodes',
       episodesDesc: 'Short stories about LUMI\'s adventures in fashion',
@@ -521,25 +512,12 @@ export const translations: Record<Language, Translations> = {
       views: 'Views',
     },
     waitlist: {
-      subtitle: 'Join Early',
-      title: 'Get Early Access',
-      description: 'Enter LUMI\'s world first. Test SIMPLARA, explore the room, try outfit selection, and participate in fashion battles before everyone else.',
-      nameLabel: 'Name *',
-      namePlaceholder: 'Your name',
-      emailLabel: 'Email *',
-      emailPlaceholder: 'your@email.com',
-      cityLabel: 'City',
-      cityPlaceholder: 'Your city',
-      interestLabel: 'I\'m interested in *',
-      earlyAccess: 'Early access to SIMPLARA',
-      mvpTesting: 'Becoming an MVP tester',
-      followContent: 'Following LUMI\'s content',
-      allAbove: 'All of the above',
-      submitButton: 'Enter LUMI\'s World',
-      privacyText: 'By joining, you\'ll get exclusive updates, early access invitations, and be part of LUMI\'s journey from the start.',
-      successTitle: 'Welcome to LUMI\'s World!',
-      successDesc: 'You\'re on the list! We\'ll send you early access details soon. Follow @itslumicat to stay updated with LUMI\'s daily adventures.',
-      anotherEntry: 'Submit Another Entry',
+      subtitle: 'Get Started',
+      title: 'Try LUMI in SIMPLARA',
+      description: 'Test SIMPLARA, explore LUMI\'s room, try outfit selection, and participate in fashion battles — all inside the SIMPLARA app.',
+      ctaDescription: 'Early access and signup happen on SIMPLARA. Head there to enter LUMI\'s world and start exploring.',
+      ctaButton: 'Go to SIMPLARA',
+      noteText: 'You\'ll be redirected to the SIMPLARA website to sign up.',
     },
     faq: {
       subtitle: 'Questions & Answers',
@@ -562,7 +540,7 @@ export const translations: Record<Language, Translations> = {
       q8: 'Is this pay-to-win?',
       a8: 'No. Battle outcomes are determined by outfit quality and community votes, not by how much you spend. Room upgrades are cosmetic and don\'t provide unfair advantages. LUMI helps everyone improve their style through honest feedback and guidance.',
       q9: 'When can I try SIMPLARA and meet LUMI?',
-      a9: 'We\'re currently in development and building the waitlist. Join early access to be among the first to enter LUMI\'s world, test features, and help shape the experience.',
+      a9: 'We\'re currently in development. Visit SIMPLARA to join early access, be among the first to enter LUMI\'s world, test features, and help shape the experience.',
       q10: 'How can I follow LUMI outside the app?',
       a10: 'Follow @itslumicat on Instagram and TikTok for daily fashion content, style tips, relatable moments, and behind-the-scenes looks at how LUMI thinks about fashion.',
     },
@@ -577,7 +555,7 @@ export const translations: Record<Language, Translations> = {
       instagram: 'Instagram',
       tiktok: 'TikTok',
       getInTouch: 'Get in Touch',
-      joinWaitlist: 'Join Waitlist',
+      joinWaitlist: 'Try SIMPLARA',
       emailUs: 'Email Us',
       copyright: 'All rights reserved.',
       privacyPolicy: 'Privacy Policy',
@@ -590,12 +568,14 @@ export const translations: Record<Language, Translations> = {
       features: 'Функции',
       battles: 'Баттлы',
       faq: 'FAQ',
-      joinWaitlist: 'Присоединиться',
+      joinWaitlist: 'Открыть SIMPLARA',
       visitSimplara: 'Открыть SIMPLARA',
     },
     hero: {
       title: 'Это ',
       titleHighlight: 'LUMI',
+      titleSuffix: ' — AI-кот, который помогает вам выглядеть стильнее',
+      helivesInside: 'Он живёт в',
       description: ', составляет образы из вашего гардероба, помогает оценить стиль и поддерживает в модных баттлах. LUMI — это не просто маскот, а ваш персональный модный компаньон.',
       meetButton: 'Познакомиться с LUMI',
       seeActionButton: 'Увидеть LUMI в деле',
@@ -786,7 +766,7 @@ export const translations: Record<Language, Translations> = {
     },
     mediaCharacter: {
       subtitle: 'За пределами приложения',
-      title: 'LUMI как медиа-персонаж',
+      title: 'Следите за LUMI в соцсетях',
       description: 'LUMI живёт за пределами SIMPLARA — в коротких эпизодах, мемах, Reels и релевантном модном контенте. Следите за его путешествием и станьте частью сообщества.',
       episodes: 'Эпизоды',
       episodesDesc: 'Короткие истории о приключениях LUMI в моде',
@@ -806,24 +786,11 @@ export const translations: Record<Language, Translations> = {
     },
     waitlist: {
       subtitle: 'Присоединяйтесь первыми',
-      title: 'Получите ранний доступ',
-      description: 'Войдите в мир LUMI первыми. Тестируйте SIMPLARA, исследуйте комнату, пробуйте подбор образов и участвуйте в модных баттлах раньше всех.',
-      nameLabel: 'Имя *',
-      namePlaceholder: 'Ваше имя',
-      emailLabel: 'Email *',
-      emailPlaceholder: 'ваш@email.com',
-      cityLabel: 'Город',
-      cityPlaceholder: 'Ваш город',
-      interestLabel: 'Мне интересно *',
-      earlyAccess: 'Ранний доступ к SIMPLARA',
-      mvpTesting: 'Стать MVP-тестером',
-      followContent: 'Следить за контентом LUMI',
-      allAbove: 'Всё вышеперечисленное',
-      submitButton: 'Войти в мир LUMI',
-      privacyText: 'Присоединившись, вы будете получать эксклюзивные обновления, приглашения на ранний доступ и станете частью путешествия LUMI с самого начала.',
-      successTitle: 'Добро пожаловать в мир LUMI!',
-      successDesc: 'Вы в списке! Мы скоро отправим вам детали раннего доступа. Подписывайтесь на @itslumicat, чтобы быть в курсе ежедневных приключений LUMI.',
-      anotherEntry: 'Отправить ещё одну заявку',
+      title: 'Попробуйте LUMI в SIMPLARA',
+      description: 'Тестируйте SIMPLARA, исследуйте комнату LUMI, пробуйте подбор образов и участвуйте в модных баттлах — всё внутри приложения SIMPLARA.',
+      ctaDescription: 'Ранний доступ и регистрация проходят на SIMPLARA. Перейдите туда, чтобы войти в мир LUMI и начать исследование.',
+      ctaButton: 'Перейти в SIMPLARA',
+      noteText: 'Вы будете перенаправлены на сайт SIMPLARA для регистрации.',
     },
     faq: {
       subtitle: 'Вопросы и ответы',
@@ -846,7 +813,7 @@ export const translations: Record<Language, Translations> = {
       q8: 'Это pay-to-win?',
       a8: 'Нет. Исходы баттлов определяются качеством образа и голосами сообщества, а не тем, сколько вы тратите. Улучшения комнаты косметические и не дают несправедливых преимуществ. LUMI помогает всем улучшить свой стиль через честную обратную связь и руководство.',
       q9: 'Когда я смогу попробовать SIMPLARA и встретить LUMI?',
-      a9: 'Мы сейчас в разработке и формируем лист ожидания. Присоединяйтесь к раннему доступу, чтобы быть среди первых, кто войдёт в мир LUMI, протестирует функции и поможет сформировать опыт.',
+      a9: 'Мы сейчас в разработке. Перейдите на SIMPLARA, чтобы получить ранний доступ, быть среди первых, кто войдёт в мир LUMI, протестирует функции и поможет сформировать опыт.',
       q10: 'Как я могу следить за LUMI вне приложения?',
       a10: 'Подписывайтесь на @itslumicat в Instagram и TikTok для ежедневного модного контента, советов по стилю, релевантных моментов и закулисных взглядов на то, как LUMI думает о моде.',
     },
@@ -861,7 +828,7 @@ export const translations: Record<Language, Translations> = {
       instagram: 'Instagram',
       tiktok: 'TikTok',
       getInTouch: 'Связаться',
-      joinWaitlist: 'Присоединиться',
+      joinWaitlist: 'Открыть SIMPLARA',
       emailUs: 'Написать нам',
       copyright: 'Все права защищены.',
       privacyPolicy: 'Политика конфиденциальности',

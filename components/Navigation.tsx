@@ -2,15 +2,15 @@
 
 import { useState, useEffect, useRef } from 'react'
 import Image from 'next/image'
-import { Button } from '@/components/ui/Button'
 import { LanguageSwitcher } from '@/components/LanguageSwitcher'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
+import { getSimplaraUrl } from '@/lib/simplara'
 
 export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const navRef = useRef<HTMLElement>(null)
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -41,7 +41,7 @@ export function Navigation() {
     }
   }
 
-  const simplaraUrl = 'https://simplara-landing.vercel.app/ru'
+  const simplaraUrl = getSimplaraUrl(language)
 
   const navLinks = [
     { label: t.nav.aboutLumi, href: 'who-is-lumi' },
@@ -106,13 +106,6 @@ export function Navigation() {
                 />
               </a>
               <LanguageSwitcher />
-              <Button
-                variant="primary"
-                size="sm"
-                onClick={() => scrollToSection('waitlist')}
-              >
-                {t.nav.joinWaitlist}
-              </Button>
             </div>
 
             {/* Mobile Menu Button */}
@@ -168,14 +161,6 @@ export function Navigation() {
               <div className="flex justify-center py-2">
                 <LanguageSwitcher />
               </div>
-              <Button
-                variant="primary"
-                size="md"
-                onClick={() => scrollToSection('waitlist')}
-                className="w-full"
-              >
-                {t.nav.joinWaitlist}
-              </Button>
             </div>
           </div>
         </div>

@@ -2,13 +2,13 @@
 
 import Image from 'next/image'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
-
-const simplaraUrl = 'https://simplara-landing.vercel.app/ru'
+import { getSimplaraUrl } from '@/lib/simplara'
 const instagramUrl = 'https://www.instagram.com/itslumicat?igsh=MTRid243ZWJ2ZWIwdQ=='
 const tiktokUrl = 'https://www.tiktok.com/@itslumi.cat?_r=1&_t=ZS-97ENKXEzIxd'
 
 export function Footer() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const simplaraUrl = getSimplaraUrl(language)
 
   return (
     <footer className="bg-charcoal-900 text-cream-100 py-8">

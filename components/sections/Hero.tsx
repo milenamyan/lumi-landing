@@ -3,11 +3,11 @@
 import Image from 'next/image'
 import { Button } from '@/components/ui/Button'
 import { useLanguage } from '@/lib/i18n/LanguageContext'
-
-const simplaraUrl = 'https://simplara-landing.vercel.app/ru'
+import { getSimplaraUrl } from '@/lib/simplara'
 
 export function Hero() {
-  const { t } = useLanguage()
+  const { t, language } = useLanguage()
+  const simplaraUrl = getSimplaraUrl(language)
 
   return (
     <section className="relative flex items-center justify-center overflow-hidden bg-gradient-to-b from-cream-50 to-cream-100 pt-24 pb-12 md:pt-28 md:pb-16">
@@ -16,10 +16,10 @@ export function Hero() {
           {/* Left Column - Content */}
           <div className="order-2 lg:order-1 animate-fade-in">
             <h1 className="mb-4 text-display-2 md:text-display-1 text-balance">
-              {t.hero.title}<span className="gradient-text">{t.hero.titleHighlight}</span> — the AI cat who helps you look more stylish
+              {t.hero.title}<span className="gradient-text">{t.hero.titleHighlight}</span>{t.hero.titleSuffix}
             </h1>
             <p className="mb-6 text-body-lg text-charcoal-500 max-w-2xl">
-              He lives inside{' '}
+              {t.hero.helivesInside}{' '}
               <a
                 href={simplaraUrl}
                 target="_blank"
@@ -143,12 +143,6 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 border-2 border-charcoal-900/30 rounded-full flex items-start justify-center p-2">
-          <div className="w-1.5 h-1.5 bg-charcoal-900/30 rounded-full"></div>
-        </div>
-      </div>
     </section>
   )
 }
