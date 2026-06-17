@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import { ScrollToTop } from '@/components/ScrollToTop'
 import { LanguageProvider } from '@/lib/i18n/LanguageContext'
 import './globals.css'
@@ -61,6 +62,7 @@ export default function RootLayout({
         <LanguageProvider>
           {children}
         </LanguageProvider>
+        <Analytics />
       </body>
     </html>
   )
